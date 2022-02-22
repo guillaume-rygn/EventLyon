@@ -1,0 +1,20 @@
+
+<a href="<%=new_event_path%>" class="row justify-content-center mb-5 col-12 btn btn-primary rounded-pill">Créer un Event</a>
+
+<p class="row justify-content-center mb-5" style="color:#fe4219"> Parcours les derniers évènements sur Lyon</p>
+
+<div class="container row justify-content-center">
+<% @events.each do |event| %>
+
+<div class="card mb-3 mx-4 card-home" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title" style="color:#8064A2"><%= event.title %></h5>
+    <p class="card-text"><em><%= event.description %></em></p>
+    <div class="mb-2 col-6">
+  </div>
+    <a href="<%= event_path(event.id)%>" class="btn btn-primary">Détails</a>
+  </div>
+</div>
+  <% end %>
+
+</div>

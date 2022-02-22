@@ -7,6 +7,7 @@ User.destroy_all
 Attendance.destroy_all
 Event.destroy_all
 
+=begin
 #Création de 10 users 
 10.times do |t|
   user = User.create!(
@@ -17,6 +18,7 @@ Event.destroy_all
     email: "email#{t}@yopmail.com"
   );
 end
+=end
 
 #Création de 10 event 
 10.times do |t|
@@ -27,11 +29,11 @@ end
     description: "incroyable event organisé par un inconnu venez nombreux",
     price: rand(1..1000),
     location: Faker::Address.street_address,
-    user_id: User.all.sample.id
+    user_id: rand(1..5)
     );
 end
 
-
+=begin
 #création de 10 attendances
 10.times do 
   attendance = Attendance.create!(
@@ -40,4 +42,4 @@ end
     event_id: Event.all.sample.id
   );
 end
-
+=end

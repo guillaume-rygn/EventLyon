@@ -27,30 +27,33 @@
 
         <ul class="nav nav-pills">
           <li class="nav-item"><a href="<%= root_path %>" class="nav-link" >Home</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Créer un event</a></li>
-          <li class="nav-item">
-          
-            <div class="dropdown show">
-              <a class="btn btn-secondary dropdown-toggle active py-2" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Connexion
-              </a>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <a class="dropdown-item" href="#" style="color:#fe4219 ">S'inscrire</a>
-                <a class="dropdown-item" href="#" style="color:#fe4219">Connexion</a>
-                </div>
-            </div>
-          </li>
-          <li class="nav-item">
+          <li class="nav-item"><a href="<%=new_event_path%>" class="nav-link">Créer un event</a></li>
+
+          <% if current_user%>
+           <li class="nav-item">
             <div class="dropdown show">
               <a class="btn btn-secondary dropdown-toggle active py-2" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Mon Profil
               </a>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                   <a class="dropdown-item" href="#" style="color:#fe4219 ">Mon Profil</a>
-                  <a class="dropdown-item" href="#" style="color:#fe4219">Se déconnecter</a>
+                  <a class="dropdown-item" href="<%=destroy_user_session_path%>" style="color:#fe4219">Se déconnecter</a>
                 </div>
             </div>
           </li>
+          <%else%>
+          <li class="nav-item">
+            <div class="dropdown show">
+              <a class="btn btn-secondary dropdown-toggle active py-2" href="<%=new_user_session_path%>" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Connexion
+              </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item" href="<%=new_user_registration_path%>" style="color:#fe4219 ">S'inscrire</a>
+                <a class="dropdown-item" href="<%= new_user_session_path%>" style="color:#fe4219">Connexion</a>
+                </div>
+            </div>
+          </li>
+         <%end%>
         </ul>
       </header>
 
