@@ -2,16 +2,17 @@ class Event < ApplicationRecord
 
   has_many :attendances
   has_many :users, through: :attendances
-
+=begin 
   validates :start_date,
-    presence: true
+   presence: true
 
+  
   validate :start_date_cannot_be_in_the_past
-    #impossible de créer ou modifier un évènement dans le passé
+  #impossible de créer ou modifier un évènement dans le passé
       def start_date_cannot_be_in_the_past
-        if start_date < DateTime.current
-          errors.add(:start_date, "L'évènement doit avoir une date supérieur à la date du jour")
-        end
+        if start_date < Date.current
+         errors.add(:start_date, "L'évènement doit avoir une date supérieur à la date du jour")
+       end
       end    
 
 
@@ -22,7 +23,7 @@ class Event < ApplicationRecord
     #nb minutes doit être un multiple de 5 
   validate :multiple_by_5
       def multiple_by_5
-        unless duration%5 == 0
+        unless duration.to_i%5 == 0
           errors.add(:duration, "la durée doit être un multiple de 5")
         end
       end
@@ -42,4 +43,6 @@ class Event < ApplicationRecord
 
   validates :location,
     presence: true
+=end
+
 end

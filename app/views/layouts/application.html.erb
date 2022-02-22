@@ -61,10 +61,10 @@
         </ul>
       </header>
 
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-
-    </div>
+      <%if notice == "" || alert == ""%>
+      <p class="alert alert-success notice"><%= notice %></p>
+      <p class="alert alert-danger"><%= alert %></p>
+      <%end%>
 
     <div class="container">
       <%= yield %>

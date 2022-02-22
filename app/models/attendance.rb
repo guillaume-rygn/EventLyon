@@ -1,5 +1,5 @@
 class Attendance < ApplicationRecord
-  #after_create :confirmation_send
+  after_create :confirmation_send
 
   def confirmation_send
     EventMailer.confirmation_email(self).deliver_now

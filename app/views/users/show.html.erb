@@ -2,6 +2,9 @@
     <div class="row d-flex justify-content-center">
         <div class="col-md-7">
             <div class="card p-3 py-4">
+
+            <%if current_user.id == params[:id].to_i%>
+
                 <div class="text-center"> <img src="https://i.imgur.com/bDLhJiP.jpg" width="100" class="rounded-circle"> </div>
                 <%if Event.find_by(user_id: @user.id)%>
                   <div class="text-center mt-3"> <span class="bg-secondary p-1 px-4 rounded text-white">Fondateur d'Event</span>
@@ -13,38 +16,48 @@
                     <div class="px-4 mt-1">
                         <p class="fonts" style="font-size:12px"><i><%=@user.description%></i></p>
                     </div>
-                    <div class="buttons"> <a href="mailto:<%=@user.email%>"class="btn btn-primary px-4 ms-3">Contact</a> </div>
-
-<%if Event.find_by(user_id: @user.id)%>
+                    
+                    <div class="buttons"> 
+                    <a href="<%= edit_user_registration_path %>" class="btn btn-primary m-3  ms-3 rounded-pill">Paramètres</a>
+                    <a href="<%= edit_user_path(current_user.id) %>" class="btn btn-primary m-3  ms-3 rounded-pill" style="color:#fe4219;background-color:#FFF">Editer profil</a>
+                     </div>
+                    
                     <h3 class="m-3">Events organisés :</h3>
-                <%end%>
-                                    <hr>
-<% @events.each do |event| %>
-<%if event.user_id == params[:id].to_i%>
+                    <%unless Event.find_by(user_id: @user.id)%>
+                        <p><i style="font-size:12px; color:  #b7b7b7  ">Aucun Event créé à ce jour</i></p>      
+                    <%end%>
+                                                        <hr>
+                    <% @events.each do |event| %>
+                    <%if event.user_id == params[:id].to_i%>
 
 
-<div class="col-12">
-    <div class="card card-small card-home">
-        <div class="thumbnail">           
-                <img alt="Opt alp thumbnail" style ="filter: brightness(50%);"src="<%=@city.sample%>">
-                <a href="<%=event_path(event.id)%>">
-                    <div class="thumb-cover"></div>
-                </a>            
-                
-        </div>
-        <div class="card-info">
-            <div class="moving">
-                    <h3><%= event.title%></h3>
-                    <p class="p"><%= event.description%></p>
-                    <p>Date : <%=event.start_date%></p>
-                    <a class="btn btn-primary active mt-2 mb-4" href="<%=event_path(event.id)%>">Détails</a>
-                    <br>
-            </div>
-        </div>
-    </div>
-</div>
-<%end%>
-<%end%>
+                    <div class="col-12">
+                        <div class="card card-small card-home">
+                            <div class="thumbnail">           
+                                    <img alt="Opt alp thumbnail" style ="filter: brightness(50%);"src="<%=@city.sample%>">
+                                    <a href="<%=event_path(event.id)%>">
+                                        <div class="thumb-cover"></div>
+                                    </a>            
+                                    
+                            </div>
+                            <div class="card-info">
+                                <div class="moving">
+                                        <h3><%= event.title%></h3>
+                                        <p class="p"><%= event.description%></p>
+                                        <p>Date : <%=event.start_date%></p>
+                                        <a class="btn btn-primary active mt-2 mb-4" href="<%=event_path(event.id)%>">Détails</a>
+                                        <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <%end%>
+                    <%end%>
+                    <%else%>
+
+                        <p><i style="font-size:12px; color:  #b7b7b7  ">Vous n'êtes pas autorisé à voir cette page</i></p>      
+
+                    <%end%>
 
 
         <a href="<%= root_path %>" class="btn btn-primary m-3 rounded-pill">👈 Revenir aux Event</a>

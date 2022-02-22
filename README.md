@@ -1,24 +1,43 @@
-# README
+# EventLyon 📸
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![EventLyon](https://i.imgur.com/fmUtGIx.gif)
 
-Things you may want to cover:
+## WEB version 🌐
 
-* Ruby version
+Le site est en live ici 👉 [EventLyon](https://eventlyon.herokuapp.com/)
 
-* System dependencies
+## Installation ⚙️
 
-* Configuration
+Utilisez la commande suivante avant de lancer le programme
 
-* Database creation
+```ruby
+$ bundle install
+```
 
-* Database initialization
+## Lancer le programme 🚦
 
-* How to run the test suite
+Il ne vous reste plus qu'à tester l'ensemble des fonctionnalités de l'application comme se créer un compte, voir les conférences,... ! 
 
-* Services (job queues, cache servers, search engines, etc.)
+```ruby
+$ rails server 
+```
 
-* Deployment instructions
+Rendez-vous ensuite sur le site en local 👉 [EventLyon](http://localhost:3000/)
+Enjoy !
 
-* ...
+## Supprimer la BDD et la relancer 🚦
+
+Relance la base de données pour de nouveaux events
+
+```ruby
+$ rake db:migrate VERSION=0 
+$ rails db:migrate
+$ rails db:seed
+```
+
+Rendez-vous ensuite sur le site en local 👉 [EventLyon](http://localhost:3000/)
+Enjoy !
+
+## Crédit 🔗
+[Guillaume Reygner](https://github.com/guillaume-rygn)
+
