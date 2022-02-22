@@ -1,0 +1,34 @@
+<div class="container mt-5">
+
+    <h3 class="m-3">Events organisés :</h3>
+    <hr>
+<div class="row">
+    <div class="col-md-6 col-s-12">
+        <div class="card card-small">
+            <div class="thumbnail">           
+                <img alt="Opt alp thumbnail" style ="filter: brightness(50%);"src="<%=@city.sample%>">                 
+            </div>
+            <div class="card-info">
+                <div class="moving">
+                    <h3><%= @event.title%></h3>
+                    <p class="p"><%= @event.description%></p>
+                    <p>Date : <%=@event.start_date%></p>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-s-12">
+        <div class="card card-small p-2">
+                    <p>Description :</p>
+                    <p class="p"><%= @event.description%></p>
+                    
+        </div>
+    </div>
+</div>
+
+
+            <a href="<%= root_path %>" class="btn btn-primary m-3 rounded-pill">👈 Revenir aux Event</a>
+
+</div>

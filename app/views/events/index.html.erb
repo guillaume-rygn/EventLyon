@@ -1,20 +1,36 @@
-
-<a href="<%=new_event_path%>" class="row justify-content-center mb-5 col-12 btn btn-primary rounded-pill">Créer un Event</a>
-
-<p class="row justify-content-center mb-5" style="color:#fe4219"> Parcours les derniers évènements sur Lyon</p>
-
+<div class="row justify-content-center">
+    <a href="<%=new_event_path%>" class="mb-5 col-sm-12 col-md-6 col-lg-4 btn btn-primary pulse rounded-pill p-3" style="border: none;background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 0%, rgba(252,176,69,1) 100%);">Créer un Event</a>
+</div>
+<h2 class="row justify-content-center mb-5" style="color:#fe4219"> Parcours les derniers évènements sur Lyon</h2>
 <div class="container row justify-content-center">
 <% @events.each do |event| %>
 
-<div class="card mb-3 mx-4 card-home" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title" style="color:#8064A2"><%= event.title %></h5>
-    <p class="card-text"><em><%= event.description %></em></p>
-    <div class="mb-2 col-6">
-  </div>
-    <a href="<%= event_path(event.id)%>" class="btn btn-primary">Détails</a>
-  </div>
+<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+    <div class="card card-small card-home">
+        <div class="thumbnail">           
+                <img alt="Opt alp thumbnail" style ="filter: brightness(50%);"src="<%=@city.sample%>">
+                <a href="<%=event_path(event.id)%>">
+                    <div class="thumb-cover"></div>
+                </a>            
+                <div class="details">
+                <a href="<%=user_path(event.user_id)%>"class="user">
+                     <div class="user-photo">
+                          <img alt="Thumb" src="<%=@avatar.sample%>">
+                     </div>
+                     <div class="name"><%=User.find(event.user_id).first_name%>  <%=User.find(event.user_id).last_name%></div>
+                </a> 
+            </div>            
+        </div>
+        <div class="card-info">
+            <div class="moving">
+                    <h3><%= event.title%></h3>
+                    <p class="p"><%= event.description%></p>
+                    <p>Date : <%=event.start_date%></p>
+                    <a class="btn btn-primary active mt-2 mb-4" href="<%=event_path(event.id)%>">Détails</a>
+                    <br>
+            </div>
+        </div>
+    </div>
 </div>
-  <% end %>
 
-</div>
+  <% end %>
