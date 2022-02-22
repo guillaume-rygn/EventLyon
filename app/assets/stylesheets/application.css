@@ -1,0 +1,39 @@
+
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+  background-color: #fe4219 ;
+  border-color: #fe4219 !important; 
+}
+
+.active {
+  background-color: #fe4219 !important;
+  color:#FFF !important;
+  border-color: #fe4219 !important; 
+  border-radius: 10px;
+}
+
+.nav-link {
+  color: #1d1d1d ;
+}
+
+.nav-link:hover {
+  color: #fe4219 ;
+}
+
+
+.button{
+  background-color: #fe4219 !important;
+  color: #FFF;
+  border-radius: 25px;
+  padding: 5px 15px;
+
+}
+
+.button:hover{
+background-color: #fe4219 !important;
+color: #FFF;
+border-radius: 25px;
+padding: 5px 15px;
+border: 1px solid #fe4219;
+margin-left: 10px;
+}
