@@ -23,11 +23,11 @@
                     <div class="thumb-cover"></div>
                 </a>            
                 <div class="details">
-                <a href="<%=user_path(@event.user_id)%>"class="user">
+                <a href="<%=user_path(@event.admin_id)%>"class="user">
                      <div class="user-photo">
                           <img alt="Thumb" src="<%=@avatar.sample%>">
                      </div>
-                     <div class="name"><%=User.find(@event.user_id).first_name%>  <%=User.find(@event.user_id).last_name%></div>
+                     <div class="name"><%=User.find(@event.admin_id).first_name%>  <%=User.find(@event.admin_id).last_name%></div>
                 </a> 
             </div>            
         </div>
@@ -57,11 +57,11 @@
                     <div class="thumb-cover"></div>
                 </a>            
                 <div class="details">
-                <a href="<%=user_path(event.user_id)%>"class="user">
+                <a href="<%=user_path(event.admin_id)%>"class="user">
                      <div class="user-photo">
                           <img alt="Thumb" src="<%=@avatar.sample%>">
                      </div>
-                     <div class="name"><%=User.find(event.user_id).first_name%>  <%=User.find(event.user_id).last_name%></div>
+                     <div class="name"><%=User.find(event.admin_id).first_name%>  <%=User.find(event.admin_id).last_name%></div>
                 </a> 
             </div>            
         </div>
