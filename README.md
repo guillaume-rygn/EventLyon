@@ -1,6 +1,6 @@
 # EventLyon 📸
 
-![EventLyon](https://i.imgur.com/z84WP2w.gif)
+![EventLyon](https://i.imgur.com/NQxOOmk.png)
 
 ## WEB version 🌐
 

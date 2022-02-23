@@ -43,6 +43,8 @@ Rails.application.configure do
 
 
   config.action_mailer.default_url_options = { :host => 'eventlyon.herokuapp.com' }
+  config.action_mailer.perform_deliveries = true
+
 
   # Mount Action Cable outside main process or domain
   # config.action_cable.mount_path = nil
