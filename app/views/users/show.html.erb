@@ -6,7 +6,7 @@
             <%if current_user.id == params[:id].to_i%>
 
                 <div class="text-center"> <img src="https://i.imgur.com/bDLhJiP.jpg" width="100" class="rounded-circle"> </div>
-                <%if Event.find_by(user_id: @user.id)%>
+                <%if Event.find_by(admin_id: @user.id)%>
                   <div class="text-center mt-3"> <span class="bg-secondary p-1 px-4 rounded text-white">Fondateur d'Event</span>
                 <%else%>
                   <div class="text-center mt-3"> <span class="bg-secondary p-1 px-4 rounded text-white">Participant</span>
@@ -23,12 +23,12 @@
                      </div>
                     
                     <h3 class="m-3">Events organisés :</h3>
-                    <%unless Event.find_by(user_id: @user.id)%>
+                    <%unless Event.find_by(admin_id: @user.id)%>
                         <p><i style="font-size:12px; color:  #b7b7b7  ">Aucun Event créé à ce jour</i></p>      
                     <%end%>
                                                         <hr>
                     <% @events.each do |event| %>
-                    <%if event.user_id == params[:id].to_i%>
+                    <%if event.admin_id == params[:id].to_i%>
 
 
                     <div class="col-12">

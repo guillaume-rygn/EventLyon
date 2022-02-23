@@ -9,7 +9,7 @@ Event.destroy_all
 
 
 #Création de 10 users 
-55.times do |t|
+10.times do |t|
   user = User.create!(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
@@ -35,7 +35,7 @@ end
 
 
 #création de 10 attendances
-120.times do 
+10.times do 
   attendance = Attendance.create!(
     #stripe_customer_id: #element,
     user_id: User.all.sample.id,

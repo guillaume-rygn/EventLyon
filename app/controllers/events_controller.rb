@@ -32,7 +32,7 @@ class EventsController < ApplicationController
       'description' => params[:description],
       'price' => params[:price],
       'location' => params[:location],
-      'user_id' => current_user.id)
+      'admin_id' => current_user.id)
 
     if @event.save
       redirect_to event_path(@event.id)
