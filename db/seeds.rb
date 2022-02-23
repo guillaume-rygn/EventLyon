@@ -29,7 +29,7 @@ end
     description: "incroyable event organisé par un inconnu venez nombreux",
     price: rand(1..1000),
     location: Faker::Address.street_address,
-    user_id: User.all.sample.id
+    admin_id: User.all.sample.id
     );
 end
 
