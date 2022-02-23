@@ -33,8 +33,11 @@ class EventsController < ApplicationController
       'price' => params[:price],
       'location' => params[:location],
       'admin_id' => current_user.id)
-
-    if @event.save
+      puts"$"*120
+      puts params.inspect
+     puts @event.title
+      puts"$"*120    
+      if @event.save
       redirect_to event_path(@event.id)
     else
       render 'new'

@@ -1,6 +1,7 @@
 <div class="container mt-5">
 
     <h3 class="m-3">Events organisé :</h3>
+
     <hr>
 <div class="row">
     <div class="col-md-6 col-s-12">
@@ -13,7 +14,11 @@
                     <h3><%= @event.title%></h3>
                     <p>Localisation :<%= @event.location%></p>
                     <p>Prix : <%=@event.price%></p>
-                    <a href="<%= root_path %>" style="color:#fff" class="btn btn-primary m-3 rounded-pill">S'inscrire</a>
+                    <%if current_user%>
+                        <%unless @event.admin_id == current_user.id || Attendance.find_by(user_id: current_user.id,event_id: @event.id) %>
+                            <a href="<%= new_event_attendance_path(@event.id) %>" style="color:#fff" class="btn btn-primary m-3 rounded-pill">S'inscrire</a>
+                        <%end%>
+                    <%end%>
 
                     <br>
                 </div>
