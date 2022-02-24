@@ -46,6 +46,7 @@
                                         <p class="p"><%= event.description%></p>
                                         <p>Date : <%=event.start_date%></p>
                                         <a class="btn btn-primary active mt-2 mb-4" href="<%=event_path(event.id)%>">Détails</a>
+                                        <a href="<%= event_path(event.id)%>" class=" btn btn-danger my-3 rounded-pill" data-confirm="Êtes-vous sûr de vouloir supprimer le potin ?" data-method="DELETE">Supprimer</a>
                                         <br>
                                 </div>
                             </div>
