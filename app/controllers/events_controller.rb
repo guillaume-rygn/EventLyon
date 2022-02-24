@@ -37,6 +37,9 @@ class EventsController < ApplicationController
       puts params.inspect
      puts @event.title
       puts"$"*120    
+
+      @event.eventbanner.attach(params[:eventbanner])
+
       if @event.save
       redirect_to event_path(@event.id)
     else

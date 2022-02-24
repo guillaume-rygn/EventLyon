@@ -25,6 +25,7 @@
                 <div class="details">
                 <a href="<%=user_path(@event.admin_id)%>"class="user">
                      <div class="user-photo">
+                     
                           <img alt="Thumb" src="<%=@avatar.sample%>">
                      </div>
                      <div class="name"><%=User.find(@event.admin_id).first_name%>  <%=User.find(@event.admin_id).last_name%></div>
@@ -51,7 +52,11 @@
 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
     <div class="card card-small card-home">
         <div class="thumbnail">           
-                <img alt="Opt alp thumbnail" style ="filter: brightness(50%);"src="<%=@city.sample%>">
+                <%if @event.eventbanner.attached?%>
+                    <img alt="Opt alp thumbnail" style ="filter: brightness(50%);"src="<%=@event.eventbanner%>">
+                    <%else%>
+                          <img alt="Opt alp thumbnail" style ="filter: brightness(50%);"src="<%=@city.sample%>">
+                    <%end%>   
                 <a href="<%=event_path(event.id)%>">
                     <div class="thumb-cover"></div>
                 </a>            

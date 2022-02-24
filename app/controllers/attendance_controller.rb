@@ -5,6 +5,8 @@ class AttendanceController < ApplicationController
   end
 
   def create
+    # Amount in cents
     
+    redirect_to event_path(params[:event_id])
   end
 end

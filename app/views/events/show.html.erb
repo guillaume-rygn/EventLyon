@@ -6,8 +6,12 @@
 <div class="row">
     <div class="col-md-6 col-s-12">
         <div class="card card-small">
-            <div class="thumbnail">           
-                <img alt="Opt alp thumbnail" style ="filter: brightness(50%);"src="<%=@city.sample%>">                 
+            <div class="thumbnail">      
+            <%if @event.eventbanner.attached?%>
+                    <img alt="Opt alp thumbnail" style ="filter: brightness(50%);"src="<%=@event.eventbanner%>">
+                    <%else%>
+                          <img alt="Opt alp thumbnail" style ="filter: brightness(50%);"src="<%=@city.sample%>">
+                    <%end%>     
             </div>
             <div class="card-info">
                 <div class="moving">
