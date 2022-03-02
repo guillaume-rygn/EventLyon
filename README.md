@@ -2,10 +2,6 @@
 
 ![EventLyon](https://i.imgur.com/NQxOOmk.png)
 
-## WEB version 🌐
-
-Le site est en live ici 👉 [EventLyon](https://eventlyon.herokuapp.com/)
-
 ## Installation ⚙️
 
 Utilisez la commande suivante avant de lancer le programme
